@@ -1,0 +1,24 @@
+{
+    "editor.fontSize": 18,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "window.zoomLevel": 2,
+    "editor.rulers": [80, 100, 120],
+    "editor.parameterHints": false,
+    "extensions.ignoreRecommendations": false,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude": {
+        "**/.git": false
+    },
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.wordBasedSuggestions": false,
+    "typescript.quickSuggestionsForPaths": false,
+    "typescript.autoImportSuggestions.enabled": false,
+    "javascript.nameSuggestions": false,
+    "workbench.colorTheme": "JSFiddle-like-syntax-vscode"
+}
