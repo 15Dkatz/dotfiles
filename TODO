@@ -1,0 +1,3 @@
+Have a before action on git push that checks if vs code settings are up to date.
+If not, run the copy script.
+Auto-generate a commit to add the change.
