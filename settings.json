@@ -1,15 +1,16 @@
 {
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Default Light+",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "editor.rulers": [80, 100, 120],
     "editor.parameterHints": false,
     "extensions.ignoreRecommendations": false,
     "vim.disableAnnoyingNeovimMessage": true,
     "workbench.startupEditor": "newUntitledFile",
     "files.exclude": {
-        "**/.git": false
+        "**/.git": true
     },
     "editor.quickSuggestions": {
         "other": false,
@@ -20,5 +21,11 @@
     "typescript.quickSuggestionsForPaths": false,
     "typescript.autoImportSuggestions.enabled": false,
     "javascript.nameSuggestions": false,
-    "workbench.colorTheme": "JSFiddle-like-syntax-vscode"
+    "editor.multiCursorModifier": "alt",
+    "ruby.intellisense": "rubyLocate",
+    "trailing-spaces.highlightCurrentLine": false,
+    "ActiveFileInStatusBar.revealFile": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.hotExit": "onExit",
+    "editor.minimap.enabled": false
 }
