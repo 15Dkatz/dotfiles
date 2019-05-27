@@ -3,7 +3,7 @@
     "workbench.colorTheme": "Default Light+",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "editor.rulers": [80, 100, 120],
     "editor.parameterHints": false,
     "extensions.ignoreRecommendations": false,
@@ -27,5 +27,8 @@
     "ActiveFileInStatusBar.revealFile": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "files.hotExit": "onExit",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "gitlens.blame.highlight.enabled": false,
+    "breadcrumbs.enabled": true
 }
