@@ -18,9 +18,15 @@
   ls = ls-files
   rc = rebase --continue
   h  = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  l = log --pretty=format:'%h %an %Cred%ar %d %Cgreen%s'
   ls-headfiles = diff-tree --no-commit-id --name-only -r HEAD
   stdf = "!f() { git st ; git df ; }; f"
   wc = "!f() { git ls-files | xargs cat | wc -l ; }; f"
   reset-master = "!f() { git checkout master; git fetch --all; git reset --hard origin/master; }; f"
-
+  rebase-master = "!f() { git fetch --all; git rebase origin/master; }; f"
+  new = !sh -c 'git checkout -b "dkatz/$0"'
+  amend = commit -a --amend --no-edit
+  amendm = commit -a --amend
+  uncommit = reset --soft HEAD^
+  clear = "!git reset .; git co .; git clean -f"
 
