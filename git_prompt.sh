@@ -17,8 +17,8 @@ function parse_git_branch {
   remote_pattern="Your branch is (behind|ahead)"
   diverge_pattern="Your branch and (.*) have diverged"
 
-  if [[ ! ${git_status}} =~ working\ (directory|tree)\ clean ]]; then
-    state="${RED}○"
+  if [[ ! ${git_status} =~ working\ (directory|tree)\ clean ]]; then
+    state="${RED}☃"
   fi
   # add an else if or two here if you want to get more specific
   if [[ ${git_status} =~ ${remote_pattern} ]]; then
@@ -48,7 +48,7 @@ function prompt_func() {
 
   # show host on remote servers
   host=$(hostname)
-  if [[ $host != *"19830-dkatz"* ]]; then
+  if [[ $host != *"dk"* ]]; then
     host="${host} - "
   else
     host=""
@@ -59,7 +59,7 @@ function prompt_func() {
   PS1=$prompt
 
   # amend the session history to the history file so that new terminals have all the history of the other terminals
-  history -a;
+  history -a
 }
 
 export PROMPT_COMMAND=prompt_func 2>/dev/null

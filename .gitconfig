@@ -22,5 +22,7 @@
   stdf = "!f() { git st ; git df ; }; f"
   wc = "!f() { git ls-files | xargs cat | wc -l ; }; f"
   reset-master = "!f() { git checkout master; git fetch --all; git reset --hard origin/master; }; f"
-
+  rs = reset-master
+  ph = push -u origin HEAD
+  ac = "!f() { git add -A ; git commit -m \""$1"\" ; }; f"
 
