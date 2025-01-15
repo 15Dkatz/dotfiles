@@ -1,5 +1,3 @@
-source ~/.bash_profile
-
 autoload -Uz compinit && compinit
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
@@ -24,9 +22,15 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 setopt PROMPT_SUBST
 export PROMPT='%n:%1~$vcs_info_msg_0_ # '
 
+. /usr/local/bin/z.sh
+# create ~/.vimrc
+# vim will find ~/.vimrc automatically
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dk/google-cloud-sdk/path.zsh.inc'; fi
+# Created by `pipx` on 2025-01-14 22:33:32
+export PATH="$PATH:/Users/david.katz/.local/bin"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dk/google-cloud-sdk/completion.zsh.inc'; fi
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/dk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dk/google-cloud-sdk/path.zsh.inc'; fi
+#
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/dk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dk/google-cloud-sdk/completion.zsh.inc'; fi
