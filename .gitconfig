@@ -1,5 +1,5 @@
 [user]
-  email = 15Dkatz@shcp.edu
+  email = david.katz@upstart.com
   name = David Katz
 [core]
   excludesfile = /Users/dkatz/.gitignore
@@ -29,3 +29,6 @@
   amendm = commit -a --amend
   uncommit = reset --soft HEAD^
   clear = "!git reset .; git co .; git clean -f"
+  mend = "!git commit --amend --no-edit --no-verify"
+  fp = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" -f"
+
