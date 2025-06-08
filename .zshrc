@@ -20,7 +20,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 }
 
 setopt PROMPT_SUBST
-export PROMPT='%n:%F{blue}%/ %f$vcs_info_msg_0_ %# '
+export PROMPT='%n:%F{blue}%/%f${vcs_info_msg_0_:+ $vcs_info_msg_0_} % #
 
 . /usr/local/bin/z.sh
 # create ~/.vimrc
