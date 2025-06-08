@@ -6,7 +6,7 @@ add-zsh-hook precmd vcs_info
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats " %F{green}%c%u(%b)%f"
-zstyle ':vcs_info:*' actionformats " %F{green}%c%u(%b)%f %a"
+zstyle ':vcs_info:*' actionformats "%F{green}%c%u(%b)%f %a"
 zstyle ':vcs_info:*' stagedstr "%F{red}"
 zstyle ':vcs_info:*' unstagedstr "%F{red}"
 zstyle ':vcs_info:*' check-for-changes true
@@ -20,7 +20,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 }
 
 setopt PROMPT_SUBST
-export PROMPT='%n:%1~$vcs_info_msg_0_ # '
+export PROMPT='%n:%F{blue}%/ %f$vcs_info_msg_0_ %# '
 
 . /usr/local/bin/z.sh
 # create ~/.vimrc
