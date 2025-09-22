@@ -30,5 +30,9 @@
   uncommit = reset --soft HEAD^
   clear = "!git reset .; git co .; git clean -f"
   mend = "!git commit --amend --no-edit --no-verify"
-  fp = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" -f"
-
+  fp = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" --force-with-lease --no-verify"
+  amendno = "!git commit -a --amend --no-edit --no-verify"
+  amp = "!git add -A; git mend; git fp"
+  fetchreset = "!f() { git fetch --all && git co \"$1\" && git reset --hard origin/\"$1\"; }; f"
+  wip = "!git add -A; git commit -m 'WIP' --no-verify"
+  save = "!git wip; git fp; git reset HEAD~1"
