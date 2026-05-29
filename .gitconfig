@@ -37,4 +37,3 @@
   untracked-count = "!f() { git ls-files --others --exclude-standard | while read -r f; do [ -n \"$f\" ] && wc -l < \"$f\"; done | awk '{s+=$1} END {print s+0}'; }; f"
   uc = "!git untracked-count"
   stdf = "!f() { git st; echo; git diff HEAD --stat; echo; untracked=$(git ls-files --others --exclude-standard); if [ -n \"$untracked\" ]; then echo 'Untracked:'; echo \"$untracked\" | while read -r f; do [ -n \"$f\" ] && printf '%s %s\\n' \"$(wc -l < \"$f\" | tr -d ' ')\" \"$f\"; done | sort -rn -k1 | awk '{ printf \" %4s %s\\n\", $1, substr($0, index($0,$2)) }'; echo; fi; read add del <<< \"$(git diff HEAD --numstat | awk '{a+=$1; d+=$2} END {print a+0, d+0}')\"; ut=$(git untracked-count); mod=$((add + del)); total=$((mod + ut)); echo \"Total lines: $total ($add insertions, $del deletions, $ut untracked)\"; }; f"
-
