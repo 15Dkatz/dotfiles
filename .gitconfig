@@ -2,7 +2,7 @@
   email = david.katz@upstart.com
   name = David Katz
 [core]
-  excludesfile = /Users/dkatz/.gitignore
+	excludesfile = /Users/david.katz/.gitignore
   editor = vim
 [alias]
   ap = add -p
@@ -20,7 +20,6 @@
   h  = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   l = log --pretty=format:'%h %an %Cred%ar %d %Cgreen%s'
   ls-headfiles = diff-tree --no-commit-id --name-only -r HEAD
-  stdf = "!f() { git st ; git df ; }; f"
   wc = "!f() { git ls-files | xargs cat | wc -l ; }; f"
   reset-master = "!f() { git checkout master; git fetch --all; git reset --hard origin/master; }; f"
   rebase-master = "!f() { git fetch --all; git rebase origin/master; }; f"
@@ -30,5 +29,12 @@
   uncommit = reset --soft HEAD^
   clear = "!git reset .; git co .; git clean -f"
   mend = "!git commit --amend --no-edit --no-verify"
-  fp = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" -f"
+  fp = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\" --force-with-lease --no-verify"
+  amendno = "!git commit -a --amend --no-edit --no-verify"
+  fetchreset = "!f() { git fetch --all && git co \"$1\" && git reset --hard origin/\"$1\"; }; f"
+  wip = "!git add -A; git commit -m 'WIP' --no-verify"
+  save = "!git wip; git fp; git reset HEAD~1"
+  untracked-count = "!f() { git ls-files --others --exclude-standard | while read -r f; do [ -n \"$f\" ] && wc -l < \"$f\"; done | awk '{s+=$1} END {print s+0}'; }; f"
+  uc = "!git untracked-count"
+  stdf = "!f() { git st; echo; git diff HEAD --stat; echo; untracked=$(git ls-files --others --exclude-standard); if [ -n \"$untracked\" ]; then echo 'Untracked:'; echo \"$untracked\" | while read -r f; do [ -n \"$f\" ] && printf '%s %s\\n' \"$(wc -l < \"$f\" | tr -d ' ')\" \"$f\"; done | sort -rn -k1 | awk '{ printf \" %4s %s\\n\", $1, substr($0, index($0,$2)) }'; echo; fi; read add del <<< \"$(git diff HEAD --numstat | awk '{a+=$1; d+=$2} END {print a+0, d+0}')\"; ut=$(git untracked-count); mod=$((add + del)); total=$((mod + ut)); echo \"Total lines: $total ($add insertions, $del deletions, $ut untracked)\"; }; f"
 
