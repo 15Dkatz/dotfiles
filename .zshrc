@@ -1,3 +1,6 @@
+# NOTE: if terminal is running `SHELL=/bin/zsh`, .zshrc is used, not
+# .bash_profile
+
 autoload -Uz compinit && compinit
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
@@ -24,3 +27,6 @@ setopt PROMPT_SUBST
 export PROMPT='%n:%F{blue}%/%f${vcs_info_msg_0_:+ $vcs_info_msg_0_} % # '
 
 . /usr/local/bin/z.sh
+
+source ~/.company_env.sh
+
